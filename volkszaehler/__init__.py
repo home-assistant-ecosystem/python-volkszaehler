@@ -25,6 +25,7 @@ class Volkszaehler(object):
         self.url = _RESOURCE.format(host=host, port=port, uuid=uuid)
         self.data = {}
         self.average = self.max = self.min = self.consumption = None
+        self.tuples = []
 
     async def get_data(self):
         """Retrieve the data."""
@@ -44,3 +45,4 @@ class Volkszaehler(object):
         self.max = self.data['data']['max'][1]
         self.min = self.data['data']['min'][1]
         self.consumption = self.data['data']['consumption']
+        self.tuples = self.data['data']['tuples']
