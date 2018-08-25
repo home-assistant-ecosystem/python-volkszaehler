@@ -23,7 +23,7 @@ if sys.argv[-1] == 'publish':
 
 setup(
     name='volkszaehler',
-    version='0.1.0',
+    version='0.1.1',
     description='Python Wrapper for interacting with the Volkszahler API.',
     long_description=long_description,
     url='https://github.com/fabaff/python-volkszaehler',
