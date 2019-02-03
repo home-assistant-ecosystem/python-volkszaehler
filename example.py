@@ -1,8 +1,4 @@
-"""
-Copyright (c) 2018 Fabian Affolter <fabian@affolter-engineering.ch>
-
-Licensed under MIT. All rights reserved.
-"""
+"""Sample code to use the wrapper for interacting with the Volkszahler API."""
 import asyncio
 
 import aiohttp
