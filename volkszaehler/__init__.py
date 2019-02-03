@@ -1,8 +1,4 @@
-"""
-Copyright (c) 2018 Fabian Affolter <fabian@affolter-engineering.ch>
-
-Licensed under MIT. All rights reserved.
-"""
+"""Wrapper for interacting with the Volkszahler API."""
 import asyncio
 import logging
 
@@ -39,6 +35,7 @@ class Volkszaehler(object):
             _LOGGER.debug(self.data)
         except (asyncio.TimeoutError, aiohttp.ClientError):
             _LOGGER.error("Can not load data from Volkszaehler API")
+            self.data = None
             raise exceptions.VolkszaehlerApiConnectionError()
 
         self.average = self.data['data']['average']
