@@ -5,8 +5,8 @@ import aiohttp
 
 from volkszaehler import Volkszaehler
 
-HOST = 'demo.volkszaehler.org'
-UUID = '57acbef0-88a9-11e4-934f-6b0f9ecd95a8'
+HOST = "demo.volkszaehler.org"
+UUID = "57acbef0-88a9-11e4-934f-6b0f9ecd95a8"
 
 
 async def main():
