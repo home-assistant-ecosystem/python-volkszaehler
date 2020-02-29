@@ -1,4 +1,4 @@
-"""Sample code to use the wrapper for interacting with the Volkszahler API."""
+"""Sample code to use the wrapper for interacting with the Volkszaehler API."""
 import asyncio
 
 import aiohttp
