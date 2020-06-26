@@ -19,11 +19,11 @@ if sys.argv[-1] == 'publish':
 
 setup(
     name='volkszaehler',
-    version='0.1.2',
+    version='0.1.3',
     description='Python Wrapper for interacting with the Volkszahler API.',
     long_description=long_description,
-    url='https://github.com/fabaff/python-volkszaehler',
-    download_url='https://github.com/fabaff/python-volkszaehler/releases',
+    url='https://github.com/home-assistant-ecosystem/python-volkszaehler',
+    download_url='https://github.com/home-assistant-ecosystem/python-volkszaehler/releases',
     author='Fabian Affolter',
     author_email='fabian@affolter-engineering.ch',
     license='MIT',

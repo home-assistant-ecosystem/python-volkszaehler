@@ -16,7 +16,7 @@ The module is available from the `Python Package Index <https://pypi.python.org/
 
     $ pip3 install volkszaehler
 
-On a Fedora-based systemor on a CentOS/RHEL machine with has EPEL enabled.
+On a Fedora-based system or a CentOS/RHEL host with EPEL.
 
 .. code:: bash
 
@@ -67,7 +67,7 @@ For development is recommended to use a ``venv``.
 
 .. code:: bash
 
-    $ python3.6 -m venv .
+    $ python3 -m venv .
     $ source bin/activate
     $ python3 setup.py develop
 
