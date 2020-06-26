@@ -16,7 +16,7 @@ The module is available from the `Python Package Index <https://pypi.python.org/
 
     $ pip3 install volkszaehler
 
-On a Fedora-based system.
+On a Fedora-based system or a CentOS/RHEL host with EPEL.
 
 .. code:: bash
 
