@@ -32,33 +32,39 @@ represents the device.
 
 .. code:: bash
 
-    $ curl http://demo.volkszaehler.org/middleware.php/data/57acbef0-88a9-11e4-934f-6b0f9ecd95a8.json
-    {
-       "version":"0.3",
-       "data":{
-          "tuples":[
-             [
-                1521193871692,
-                0.18,
-                1
-             ]
-          ],
-          "uuid":"57acbef0-88a9-11e4-934f-6b0f9ecd95a8",
-          "from":1521193871682,
-          "to":1521193871692,
-          "min":[
-             1521193871692,
-             0.18
-          ],
-          "max":[
-             1521193871692,
-             0.18
-          ],
-          "average":0.18,
-          "consumption":0,
-          "rows":2
-       }
-    }
+   $ http https://demo.volkszaehler.org/middleware.php/data/57acbef0-88a9-11e4-934f-6b0f9ecd95a8.json
+   [...]
+   {
+       "data": {
+           "average": 0.01,
+           "consumption": 38.099,
+           "from": 1584390593336,
+           "max": [
+               1597701600000,
+               0.01
+           ],
+           "min": [
+               1597701600000,
+               0.01
+           ],
+           "rows": 3,
+           "to": 1598106085887,
+           "tuples": [
+               [
+                   1597701600000,
+                   0.01,
+                   1
+               ],
+               [
+                   1598106085887,
+                   0.01,
+                   1
+               ]
+           ],
+           "uuid": "57acbef0-88a9-11e4-934f-6b0f9ecd95a8"
+       },
+       "version": "0.3"
+   }
 
 Development
 -----------
