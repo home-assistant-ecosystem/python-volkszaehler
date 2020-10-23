@@ -34,7 +34,7 @@ class Volkszaehler(object):
 
             _LOGGER.debug("Response from Volkszaehler API: %s", response.status)
             self.data = await response.json()
-            self.data1 = await response.json()
+            self.data1 = await response1.json()
             _LOGGER.debug(self.data)
         except (asyncio.TimeoutError, aiohttp.ClientError):
             _LOGGER.error("Can not load data from Volkszaehler API")
