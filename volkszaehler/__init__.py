@@ -21,10 +21,10 @@ class Volkszaehler(object):
         self._session = session
         if tls:
             self.url = _RESOURCE.format(schema="https", host=host, port=port, uuid=uuid)
-            self.urlnow = _RESOURCE.format(schema="https", host=host, port=port, uuid=uuid)
+            self.urlnow = _RESOURCENOW.format(schema="https", host=host, port=port, uuid=uuid)
         else:
             self.url = _RESOURCE.format(schema="http", host=host, port=port, uuid=uuid)
-            self.urlnow = _RESOURCE.format(schema="http", host=host, port=port, uuid=uuid)
+            self.urlnow = _RESOURCENOW.format(schema="http", host=host, port=port, uuid=uuid)
         self.data = {}
         self.average = self.max = self.min = self.consumption = None
         self.tuples = []
