@@ -8,17 +8,20 @@ import async_timeout
 from . import exceptions
 
 _LOGGER = logging.getLogger(__name__)
-_RESOURCE = "http://{host}:{port}/middleware.php/data/{uuid}.json"
+_RESOURCE = "{schema}://{host}:{port}/middleware.php/data/{uuid}.json"
 
 
 class Volkszaehler(object):
     """A class for handling the data retrieval."""
 
-    def __init__(self, loop, session, uuid, host="localhost", port=80):
+    def __init__(self, loop, session, uuid, host="localhost", port=80, tls=False):
         """Initialize the connection to the API."""
         self._loop = loop
         self._session = session
-        self.url = _RESOURCE.format(host=host, port=port, uuid=uuid)
+        if tls:
+            self.url = _RESOURCE.format(schema="https", host=host, port=port, uuid=uuid)
+        else:
+            self.url = _RESOURCE.format(schema="http", host=host, port=port, uuid=uuid)
         self.data = {}
         self.average = self.max = self.min = self.consumption = None
         self.tuples = []

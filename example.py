@@ -12,7 +12,7 @@ UUID = "57acbef0-88a9-11e4-934f-6b0f9ecd95a8"
 async def main():
     """The main part of the example script."""
     async with aiohttp.ClientSession() as session:
-        zaehler = Volkszaehler(loop, session, UUID, host=HOST)
+        zaehler = Volkszaehler(loop, session, UUID, host=HOST, port=443, tls=True)
 
         # Get the data
         await zaehler.get_data()
