@@ -47,4 +47,4 @@ class Volkszaehler(object):
         self.min = self.data["data"]["min"][1]
         self.consumption = self.data["data"]["consumption"]
         self.tuples = self.data["data"]["tuples"]
-        self.last = self.data["data1"]["average"]
+        self.last = self.data1["data"]["average"]
