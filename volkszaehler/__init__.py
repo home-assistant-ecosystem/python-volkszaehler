@@ -9,6 +9,7 @@ from . import exceptions
 
 _LOGGER = logging.getLogger(__name__)
 _RESOURCE = "{schema}://{host}:{port}/middleware.php/data/{uuid}.json"
+_RESOURCENOW = "{schema}://{host}:{port}/middleware.php/data/{uuid}.json?from=now"
 
 
 class Volkszaehler(object):
@@ -20,8 +21,10 @@ class Volkszaehler(object):
         self._session = session
         if tls:
             self.url = _RESOURCE.format(schema="https", host=host, port=port, uuid=uuid)
+            self.urlnow = _RESOURCE.format(schema="https", host=host, port=port, uuid=uuid)
         else:
             self.url = _RESOURCE.format(schema="http", host=host, port=port, uuid=uuid)
+            self.urlnow = _RESOURCE.format(schema="http", host=host, port=port, uuid=uuid)
         self.data = {}
         self.average = self.max = self.min = self.consumption = None
         self.tuples = []
@@ -31,9 +34,11 @@ class Volkszaehler(object):
         try:
             with async_timeout.timeout(5, loop=self._loop):
                 response = await self._session.get(self.url)
+                responsenow = await self._session.get(self.urlnow)
 
             _LOGGER.debug("Response from Volkszaehler API: %s", response.status)
             self.data = await response.json()
+            self.datanow = await responsenow.json()
             _LOGGER.debug(self.data)
         except (asyncio.TimeoutError, aiohttp.ClientError):
             _LOGGER.error("Can not load data from Volkszaehler API")
@@ -45,3 +50,4 @@ class Volkszaehler(object):
         self.min = self.data["data"]["min"][1]
         self.consumption = self.data["data"]["consumption"]
         self.tuples = self.data["data"]["tuples"]
+        self.last = self.datanow["data"]["average"]
