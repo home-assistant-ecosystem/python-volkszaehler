@@ -22,6 +22,7 @@ async def main():
         print("Min:", zaehler.min)
         print("Consumption:", zaehler.consumption)
         print("Data tuples:", zaehler.tuples)
+        print("Last:", zaehler.last)
 
 
 loop = asyncio.get_event_loop()

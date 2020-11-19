@@ -9,12 +9,13 @@ from . import exceptions
 
 _LOGGER = logging.getLogger(__name__)
 _RESOURCE = "{schema}://{host}:{port}/middleware.php/data/{uuid}.json"
-
+_RESOURCE_FROM = "from={param_from}"
+_RESOURCE_TO = "to={param_to}"
 
 class Volkszaehler(object):
     """A class for handling the data retrieval."""
 
-    def __init__(self, loop, session, uuid, host="localhost", port=80, tls=False):
+    def __init__(self, loop, session, uuid, host="localhost", port=80, tls=False, param_from="", param_to=""):
         """Initialize the connection to the API."""
         self._loop = loop
         self._session = session
@@ -25,6 +26,13 @@ class Volkszaehler(object):
         self.data = {}
         self.average = self.max = self.min = self.consumption = None
         self.tuples = []
+
+        _PREFIX = "?"
+        if param_from:
+            self.url += _PREFIX + _RESOURCE_FROM.format(param_from=param_from)
+            _PREFIX = "&"
+        if param_to:
+            self.url += _PREFIX + _RESOURCE_TO.format(param_to=param_to)
 
     async def get_data(self):
         """Retrieve the data."""
@@ -45,3 +53,4 @@ class Volkszaehler(object):
         self.min = self.data["data"]["min"][1]
         self.consumption = self.data["data"]["consumption"]
         self.tuples = self.data["data"]["tuples"]
+        self.last = self.data["data"]["tuples"][-1][1]
