@@ -7,6 +7,7 @@ Changes
 - Add new variable 'last' using middleware parameter (@bbr111)
 
 20201026 - 0.2.0
+----------------
 
 - Add support for HTTPS (fixes #1)
 
