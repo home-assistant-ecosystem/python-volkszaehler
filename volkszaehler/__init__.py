@@ -15,7 +15,7 @@ _RESOURCE_TO = "to={param_to}"
 class Volkszaehler(object):
     """A class for handling the data retrieval."""
 
-    def __init__(self, loop, session, uuid, host="localhost", port=80, tls=False, param_from="today", param_to="now"):
+    def __init__(self, loop, session, uuid, host="localhost", port=80, tls=False, param_from="", param_to=""):
         """Initialize the connection to the API."""
         self._loop = loop
         self._session = session
