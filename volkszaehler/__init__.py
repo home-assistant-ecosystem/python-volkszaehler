@@ -12,10 +12,21 @@ _RESOURCE = "{schema}://{host}:{port}/middleware.php/data/{uuid}.json"
 _RESOURCE_FROM = "from={param_from}"
 _RESOURCE_TO = "to={param_to}"
 
+
 class Volkszaehler(object):
     """A class for handling the data retrieval."""
 
-    def __init__(self, loop, session, uuid, host="localhost", port=80, tls=False, param_from="", param_to=""):
+    def __init__(
+        self,
+        loop,
+        session,
+        uuid,
+        host="localhost",
+        port=80,
+        tls=False,
+        param_from="",
+        param_to="",
+    ):
         """Initialize the connection to the API."""
         self._loop = loop
         self._session = session
