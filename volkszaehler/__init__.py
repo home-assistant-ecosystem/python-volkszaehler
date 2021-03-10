@@ -9,20 +9,39 @@ from . import exceptions
 
 _LOGGER = logging.getLogger(__name__)
 _RESOURCE = "{schema}://{host}:{port}/middleware.php/data/{uuid}.json"
+_RESOURCE_NO_MIDDLEWARE = "{schema}://{host}:{port}/data/{uuid}.json"
 _RESOURCE_FROM = "from={param_from}"
 _RESOURCE_TO = "to={param_to}"
+
 
 class Volkszaehler(object):
     """A class for handling the data retrieval."""
 
-    def __init__(self, loop, session, uuid, host="localhost", port=80, tls=False, param_from="", param_to=""):
+    def __init__(
+        self,
+        loop,
+        session,
+        uuid,
+        host="localhost",
+        port=80,
+        tls=False,
+        param_from="",
+        param_to="",
+        middleware=True,
+    ):
         """Initialize the connection to the API."""
         self._loop = loop
         self._session = session
-        if tls:
-            self.url = _RESOURCE.format(schema="https", host=host, port=port, uuid=uuid)
+
+        if middleware:
+            self.url = _RESOURCE.format(
+                schema="https" if tls else "http", host=host, port=port, uuid=uuid
+            )
         else:
-            self.url = _RESOURCE.format(schema="http", host=host, port=port, uuid=uuid)
+            self.url = _RESOURCE_NO_MIDDLEWARE.format(
+                schema="https" if tls else "http", host=host, port=port, uuid=uuid
+            )
+
         self.data = {}
         self.average = self.max = self.min = self.consumption = None
         self.tuples = []
