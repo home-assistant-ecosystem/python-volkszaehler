@@ -22,6 +22,13 @@ On a Fedora-based system or a CentOS/RHEL host with EPEL.
 
     $ sudo dnf -y install python3-volkszaehler
 
+For Nix or NixOS users is a package available. Keep in mind that the lastest releases might only
+be present in the ``unstable`` channel.
+
+.. code:: bash
+
+    $ nix-env -iA nixos.python39Packages.volkszaehler
+
 Usage
 -----
 
