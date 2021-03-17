@@ -19,7 +19,7 @@ if sys.argv[-1] == "publish":
 
 setup(
     name="volkszaehler",
-    version="0.2.1",
+    version="0.2.2",
     description="Python Wrapper for interacting with the Volkszahler API.",
     long_description=long_description,
     url="https://github.com/home-assistant-ecosystem/python-volkszaehler",
