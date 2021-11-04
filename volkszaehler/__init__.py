@@ -56,7 +56,7 @@ class Volkszaehler(object):
     async def get_data(self):
         """Retrieve the data."""
         try:
-            with async_timeout.timeout(5, loop=self._loop):
+            with async_timeout.timeout(5):
                 response = await self._session.get(self.url)
 
             _LOGGER.debug("Response from Volkszaehler API: %s", response.status)
