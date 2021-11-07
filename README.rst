@@ -73,17 +73,6 @@ represents the device.
        "version": "0.3"
    }
 
-Development
------------
-
-For development is recommended to use a ``venv``.
-
-.. code:: bash
-
-    $ python3 -m venv .
-    $ source bin/activate
-    $ python3 setup.py develop
-
 License
 -------
 
