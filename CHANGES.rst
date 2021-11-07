@@ -1,9 +1,10 @@
 Changes
 =======
 
-202011xx - 0.2.1
+20210317 - 0.2.2
 ----------------
 
+- Only allow aiohttp >= 3.7.4 to avoid CVE-2021-21330
 - Add new variable 'last' using middleware parameter (@bbr111)
 
 20201026 - 0.2.0
