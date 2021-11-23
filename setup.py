@@ -15,7 +15,7 @@ with open(os.path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     name="volkszaehler",
-    version="0.2.2",
+    version="0.3.0",
     description="Python Wrapper for interacting with the Volkszahler API.",
     long_description=long_description,
     url="https://github.com/home-assistant-ecosystem/python-volkszaehler",
