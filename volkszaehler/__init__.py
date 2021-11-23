@@ -19,7 +19,6 @@ class Volkszaehler(object):
 
     def __init__(
         self,
-        loop,
         session,
         uuid,
         host="localhost",
@@ -30,7 +29,6 @@ class Volkszaehler(object):
         middleware=True,
     ):
         """Initialize the connection to the API."""
-        self._loop = loop
         self._session = session
 
         if middleware:
