@@ -1,10 +1,16 @@
 Changes
 =======
 
+20211123 - 0.3.1
+----------------
+
+- Fix constraint
+
 20211123 - 0.3.0
 ----------------
 
 - Support later async_timeout
+- Remove loop (thanks @bdraco)
 
 20210317 - 0.2.2
 ----------------
