@@ -28,7 +28,7 @@ setup(
         "async_timeout>4,<5",
     ],
     packages=["volkszaehler"],
-    python_requires=">=3.8",
+    python_requires=">=3.9",
     zip_safe=True,
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -38,8 +38,8 @@ setup(
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
         "Operating System :: POSIX",
-        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Topic :: Utilities",
     ],
 )
