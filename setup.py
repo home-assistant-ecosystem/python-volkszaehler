@@ -24,7 +24,7 @@ setup(
     author_email="fabian@affolter-engineering.ch",
     license="MIT",
     install_requires=[
-        "aiohttp>=3.7.4,<4",
+        "aiohttp>=3.8.4,<4",
         "async_timeout>4,<5",
     ],
     packages=["volkszaehler"],
