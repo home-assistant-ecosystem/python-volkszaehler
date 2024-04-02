@@ -12,7 +12,7 @@ with open(os.path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     name="volkszaehler",
-    version="0.4.0",
+    version="0.5.0",
     description="Python Wrapper for interacting with the Volkszahler API.",
     long_description=long_description,
     url="https://github.com/home-assistant-ecosystem/python-volkszaehler",
@@ -25,7 +25,7 @@ setup(
         "async_timeout>4,<5",
     ],
     packages=["volkszaehler"],
-    python_requires=">=3.9",
+    python_requires=">=3.10",
     zip_safe=True,
     classifiers=[
         "Development Status :: 3 - Alpha",
@@ -35,9 +35,9 @@ setup(
         "Operating System :: MacOS :: MacOS X",
         "Operating System :: Microsoft :: Windows",
         "Operating System :: POSIX",
-        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
         "Topic :: Utilities",
     ],
 )
