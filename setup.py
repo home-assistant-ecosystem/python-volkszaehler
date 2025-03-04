@@ -22,7 +22,7 @@ setup(
     license="MIT",
     install_requires=[
         "aiohttp>=3.8.4,<4",
-        "async_timeout>4,<5",
+        "async_timeou",
     ],
     packages=["volkszaehler"],
     python_requires=">=3.10",
