@@ -12,7 +12,7 @@ with open(os.path.join(here, "README.rst"), encoding="utf-8") as f:
 
 setup(
     name="volkszaehler",
-    version="0.5.1",
+    version="0.5.2",
     description="Python Wrapper for interacting with the Volkszahler API.",
     long_description=long_description,
     url="https://github.com/home-assistant-ecosystem/python-volkszaehler",
