@@ -11,11 +11,13 @@ license = "MIT"
 authors = [
   { name = "Fabian Affolter", email = "fabian@affolter-engineering.ch" },
 ]
+
 requires-python = ">=3.13"
+
 dependencies = [
   "aiohttp>=3.8.4,<4",
-  "async_timeout",
 ]
+
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Environment :: Console",
