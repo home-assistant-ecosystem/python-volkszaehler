@@ -1,6 +1,13 @@
 Changes
 =======
 
+0.6.0 - 2026-04-07
+------------------
+
+- Update build-system to hatchling
+- Add basic unit tests
+- Use native aiohttp timeout
+
 0.5.1 - 2025-03-04
 ------------------
 
