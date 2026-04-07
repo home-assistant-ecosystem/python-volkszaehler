@@ -11,6 +11,18 @@ license = "MIT"
 authors = [
   { name = "Fabian Affolter", email = "fabian@affolter-engineering.ch" },
 ]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS :: MacOS X",
+  "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Utilities",
+]
 
 requires-python = ">=3.13"
 
@@ -27,18 +39,6 @@ test = [
 [tool.pytest.ini_options]
 asyncio_mode = "auto"
 
-classifiers = [
-  "Development Status :: 3 - Alpha",
-  "Environment :: Console",
-  "Intended Audience :: Developers",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: MacOS :: MacOS X",
-  "Operating System :: Microsoft :: Windows",
-  "Operating System :: POSIX",
-  "Programming Language :: Python :: 3.13",
-  "Programming Language :: Python :: 3.14",
-  "Topic :: Utilities",
-]
 
 [project.urls]
 Homepage = "https://github.com/home-assistant-ecosystem/python-volkszaehler"
