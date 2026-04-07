@@ -27,7 +27,7 @@ be present in the ``unstable`` channel.
 
 .. code:: bash
 
-    $ nix-env -iA nixos.python39Packages.volkszaehler
+    $ nix-env -iA nixos.python3Packages.volkszaehler
 
 Usage
 -----
