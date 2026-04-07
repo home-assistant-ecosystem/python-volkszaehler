@@ -34,4 +34,4 @@ jobs:
 
     - name: Run tests with hatch
       run: |
-        hatch run test
+        hatch test
