@@ -4,7 +4,6 @@ import asyncio
 import logging
 
 import aiohttp
-import async_timeout
 
 from . import exceptions
 
@@ -55,8 +54,9 @@ class Volkszaehler(object):
     async def get_data(self):
         """Retrieve the data."""
         try:
-            with async_timeout.timeout(5):
-                response = await self._session.get(self.url)
+            response = await self._session.get(
+                self.url, timeout=aiohttp.ClientTimeout(total=5)
+            )
 
             _LOGGER.debug("Response from Volkszaehler API: %s", response.status)
             self.data = await response.json()
