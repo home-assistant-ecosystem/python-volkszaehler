@@ -1,4 +1,5 @@
 """Sample code to use the wrapper for interacting with the Volkszaehler API."""
+
 import asyncio
 
 import aiohttp

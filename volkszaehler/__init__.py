@@ -1,4 +1,5 @@
 """Wrapper for interacting with the Volkszahler API."""
+
 import asyncio
 import logging
 
