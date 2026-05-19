@@ -4,7 +4,7 @@ import asyncio
 
 import aiohttp
 
-from volkszaehler import Volkszaehler
+from volkszaehler import Volkszaehler, VolkszaehlerEntitiesClient
 
 HOST = "demo.volkszaehler.org"
 UUID = "57acbef0-88a9-11e4-934f-6b0f9ecd95a8"
@@ -13,6 +13,12 @@ UUID = "57acbef0-88a9-11e4-934f-6b0f9ecd95a8"
 async def main():
     """The main part of the example script."""
     async with aiohttp.ClientSession() as session:
+        entitiesClient = VolkszaehlerEntitiesClient(
+            session, host=HOST, port=443, tls=True
+        )
+        await entitiesClient.get_entities()
+        print("Entity Title:", entitiesClient.entities[0]["title"])
+
         zaehler = Volkszaehler(session, UUID, host=HOST, port=443, tls=True)
 
         # Get the data

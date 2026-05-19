@@ -3,7 +3,7 @@
 import aiohttp
 import pytest
 
-from volkszaehler import Volkszaehler
+from volkszaehler import Volkszaehler, VolkszaehlerEntitiesClient
 from volkszaehler.exceptions import VolkszaehlerApiConnectionError
 
 
@@ -46,7 +46,6 @@ class MockSession:
         }
     ],
 )
-
 @pytest.mark.asyncio
 async def test_get_data_success(mock_json):
     """Test successful data retrieval from Volkszaehler API."""
@@ -76,3 +75,52 @@ async def test_get_data_connection_error():
     v = Volkszaehler(FailingSession(), uuid="abc123")
     with pytest.raises(VolkszaehlerApiConnectionError):
         await v.get_data()
+
+
+@pytest.mark.parametrize(
+    "mock_json",
+    [
+        {
+            "version": "0.3",
+            "entities": [
+                {
+                    "uuid": "57acbef0-88a9-11e4-934f-6b0f9ecd95a8",
+                    "type": "electric meter",
+                    "color": "#c62828",
+                    "fillstyle": 0,
+                    "linestyle": "solid",
+                    "public": True,
+                    "resolution": 1000,
+                    "style": "steps",
+                    "title": "PV Produktion",
+                    "yaxis": "auto",
+                },
+            ],
+        }
+    ],
+)
+@pytest.mark.asyncio
+async def test_get_entities_success(mock_json):
+    """Test successful data retrieval from Volkszaehler entity API."""
+    mock_response = MockResponse(200, mock_json)
+    mock_session = MockSession(mock_response)
+    v = VolkszaehlerEntitiesClient(mock_session)
+    await v.get_entities()
+    assert len(v.entities) == 1
+    assert v.entities[0]["title"] == "PV Produktion"
+
+
+@pytest.mark.asyncio
+async def test_get_entities_connection_error():
+    """Test handling of connection errors when retrieving data from Volkszaehler API."""
+
+    class FailingSession:
+        """A session that simulates a connection error."""
+
+        async def get(self, url, timeout=None):
+            """Simulate a connection error."""
+            raise aiohttp.ClientError()
+
+    v = VolkszaehlerEntitiesClient(FailingSession())
+    with pytest.raises(VolkszaehlerApiConnectionError):
+        await v.get_entities()

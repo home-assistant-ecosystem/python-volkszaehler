@@ -1,6 +1,11 @@
 Changes
 =======
 
+Unreleased
+----------
+
+- Add `VolkszaehlerEntitiesClient` for retrieving entity metadata
+
 0.6.0 - 2026-04-07
 ------------------
 
